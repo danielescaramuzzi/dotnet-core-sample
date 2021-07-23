@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: netcore-app-pipeline-
+spec:
+  # serviceAccountName: build-bot
+  pipelineRef:
+    name: netcore-app-pipeline
+  workspaces:
+  - name: pipeline-shared-data
+    volumeClaimTemplate: 
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi

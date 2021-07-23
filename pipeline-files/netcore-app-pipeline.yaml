@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: netcore-app-pipeline
+spec:
+  workspaces:
+    - name: pipeline-shared-data
+
+  tasks:
+    - name: clone-repository
+      taskRef:
+        name: git-clone
+        kind: ClusterTask
+      workspaces:
+        - name: output
+          workspace: pipeline-shared-data
+      params:
+        - name: url
+          value: https://github.com/danielescaramuzzi/dotnet-core-sample.git
