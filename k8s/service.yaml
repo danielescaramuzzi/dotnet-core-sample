@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: scara-dotnet-web-app
+    app.kubernetes.io/instance: scara-dotnet-web-app-instance
+    app.kubernetes.io/name: scara-dotnet-web-app
+  name: scara-dotnet-web-app
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: scara-dotnet-web-app-instance
+    app.kubernetes.io/name: scara-dotnet-web-app
+  sessionAffinity: None
+  type: ClusterIP
