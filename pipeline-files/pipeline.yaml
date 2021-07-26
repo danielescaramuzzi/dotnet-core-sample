@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: netcore-app-pipeline
+  name: scara-dotnet-web-app-pipeline
 spec:
   workspaces:
     - name: pipeline-shared-data
