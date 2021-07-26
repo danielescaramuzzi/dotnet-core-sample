@@ -5,10 +5,6 @@ resources:
 - service.yaml
 - route.yaml
 commonLabels:
-  app: daniele-scaramuzzi-scara-dotnet-web-app
-  app.kubernetes.io/instance: daniele-scaramuzzi-scara-dotnet-web-app-instance
-  app.kubernetes.io/name: daniele-scaramuzzi-scara-dotnet-web-app
-images:
-- name: quay.io/upslopeio/express-sample-app
-  newName: quay.io/danielescaramuzzi/scara-dotnet-web-app
-  newTag: 1d05f2ef0e54b84c1869ae1bea18c4383a960f56
+  app: scara-dotnet-web-app
+  app.kubernetes.io/instance: scara-dotnet-web-app-instance
+  app.kubernetes.io/name: scara-dotnet-web-app
