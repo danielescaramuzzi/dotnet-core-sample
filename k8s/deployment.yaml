@@ -37,14 +37,14 @@ spec:
             failureThreshold: 3
             httpGet:
               path: /
-              port: 8080
+              port: 80
               scheme: HTTP
             periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 1
           name: scara-dotnet-web-app
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               name: http
               protocol: TCP
           readinessProbe:
